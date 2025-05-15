@@ -1,28 +1,28 @@
 // src/pages/Login.js
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { loginUser } from "../services/auth";
+import React, { useState } from "react";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate, Link } from "react-router-dom";
 
-const Login = () => {
+function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await loginUser(email, password);
-      navigate("/");
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate("/home");
     } catch (error) {
-      setError(error.message);
+      console.error("Error logging in:", error.message);
+      alert(error.message);
     }
   };
 
   return (
     <div className="auth-container">
       <h2>Login</h2>
-      {error && <p className="error">{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -40,9 +40,11 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a href="/register">Register</a></p>
+      <p>
+        Don't have an account? <Link to="/register">Register here</Link>
+      </p>
     </div>
   );
-};
+}
 
 export default Login;
