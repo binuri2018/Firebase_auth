@@ -1,4 +1,4 @@
-# Firebase Authentication Project
+# Firebase Authentication
 
 A modern web application demonstrating secure user authentication using Firebase Authentication services. This project showcases best practices for implementing user authentication in a React application.
 
@@ -30,7 +30,7 @@ Before you begin, ensure you have the following installed:
 
 1. Clone the repository:
 ```bash
-git clone [your-repository-url]
+git clone [https://github.com/binuri2018/Firebase_auth]
 cd firebase-auth
 ```
 
@@ -46,8 +46,8 @@ npm install
    - Add your web application to the project
    - Copy your Firebase configuration
 
-4. Create a `.env` file in the root directory and add your Firebase configuration:
-```env
+4. Create a `src/firebase` file in the root directory and add your Firebase configuration:
+```
 REACT_APP_FIREBASE_API_KEY=your_api_key
 REACT_APP_FIREBASE_AUTH_DOMAIN=your_auth_domain
 REACT_APP_FIREBASE_PROJECT_ID=your_project_id
@@ -96,25 +96,6 @@ firebase-auth/
 ├── package.json        # Project dependencies
 └── README.md          # Project documentation
 ```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## 👥 Authors
 
-- Your Name - Initial work
-
-## 🙏 Acknowledgments
-
-- Firebase Documentation
-- React Documentation
-- Create React App Team
+- Binuri2018 - Initial work
